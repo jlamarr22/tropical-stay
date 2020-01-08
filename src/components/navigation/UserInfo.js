@@ -38,7 +38,7 @@ class UserInfo extends React.Component {
     }))
   }
 
-  renderLogout = () => (
+  renderLogout = ( enroll, enrolled ) => (
     <React.Fragment>
       <div
         className='user-info-dropdown-btn'
@@ -49,15 +49,15 @@ class UserInfo extends React.Component {
       >
         <img src={this.state.showDropdown ? upArrow : downArrow} alt='dropdown' />
       </div>
-      { this.state.showDropdown && this.renderDropdown() }
+      { this.state.showDropdown && this.renderDropdown( enroll, enrolled ) }
     </React.Fragment>
   )
 
-  renderDropdown = () => {
+  renderDropdown = ( enroll, enrolled ) => {
     const { logout } = this.context
     return (
       <div className='user-info-dropdown-content'>
-        <UserDropdown logout={logout} />
+        <UserDropdown logout={logout} enroll={enroll} enrolled={enrolled} />
       </div>
     )
   }
@@ -65,12 +65,13 @@ class UserInfo extends React.Component {
   render() {
     const { logout, isAutoLogin } = this.context
     const { accountName } = this.state
+    const { enroll, enrolled } = this.props;
     const shouldDisplayLogout = logout && !isAutoLogin
     return (
       <div className={`user-info-container ${shouldDisplayLogout ? '' : 'user-info-hide-dropdown'}`}>
         <span className='user-info-prefix'> Signed in as </span>
         <div className='user-info-name'>{accountName}</div>
-        { shouldDisplayLogout && this.renderLogout() }
+        { shouldDisplayLogout && this.renderLogout(enroll, enrolled) }
       </div>
     )
   }

@@ -28,7 +28,7 @@
     "create-hash": "^1.2.0",
     "create-hmac": "^1.1.7",
     "ecurve": "^1.0.6",
-    "elliptic": "^6.5.1",
+    "elliptic": "^6.5.4",
     "eosjs": "20.0.4-e2c667e.0",
     "focus-visible": "4.1.5",
     "prop-types": "15.7.2",

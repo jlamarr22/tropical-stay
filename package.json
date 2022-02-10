@@ -70,6 +70,6 @@
     "@testing-library/react": "^9.4.0",
     "@types/elliptic": "^6.4.6",
     "eslint-plugin-no-exclusive-tests": "^1.0.0-rc.1",
-    "node-sass": "^4.10.0"
+    "node-sass": "^7.0.0"
   }
 }
